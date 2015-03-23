@@ -1,6 +1,20 @@
 # Cordova Photo Gallery Plugin
 
-This plugin is based on the hello world plugin.
+This plugin is based on the hello world plugin. Example:
+
+```
+		var success = function(message) {
+			//alert(message);
+		}
+		var failure = function() {
+			alert("Error calling Hello Plugin");
+		}
+		hello.show(["Icon.png", 
+				"http://www.helpinghomelesscats.com/images/cat1.jpg",
+				"http://www.cats.org.uk/uploads/images/pages/photo_latest14.jpg",
+				"http://www.nose2tail.co.uk/cat-matlock-derbyshire.jpg"
+		], success, failure);
+```
 
 ---
 
