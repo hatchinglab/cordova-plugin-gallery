@@ -39,9 +39,13 @@ var app = {
 			//alert(message);
 		}
 		var failure = function() {
-			//alert("Error calling Hello Plugin");
+			alert("Error calling Hello Plugin");
 		}
-		hello.greet("XXX", success, failure);
+		hello.show(["Icon.png", 
+				"http://www.helpinghomelesscats.com/images/cat1.jpg",
+				"http://www.cats.org.uk/uploads/images/pages/photo_latest14.jpg",
+				"http://www.nose2tail.co.uk/cat-matlock-derbyshire.jpg"
+		], success, failure);
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
