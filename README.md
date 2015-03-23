@@ -1,3 +1,9 @@
+# Cordova Photo Gallery Plugin
+
+This plugin is based on the hello world plugin.
+
+---
+
 # Cordova Hello World Plugin
 
 Simple plugin that returns your string prefixed with hello.
