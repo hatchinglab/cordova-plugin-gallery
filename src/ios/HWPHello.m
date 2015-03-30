@@ -17,6 +17,23 @@
 }
  */
 
+- (BOOL)is_pad
+{
+	return [(NSString*)[UIDevice currentDevice].model hasPrefix:@"iPad"];
+}
+
+- (void)isPhone:(CDVInvokedUrlCommand*)command
+{
+	CDVPluginResult* result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsBool:![self is_pad]];
+    [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
+}
+
+- (void)isTablet:(CDVInvokedUrlCommand*)command
+{
+	CDVPluginResult* result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsBool:[self is_pad]];
+    [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
+}
+
 - (void)show:(CDVInvokedUrlCommand*)command
 {
     //NSString* callbackId = [command callbackId];

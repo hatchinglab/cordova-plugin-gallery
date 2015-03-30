@@ -12,24 +12,68 @@
   <asset src="www/hello.js" target="js/hello.js"/>
 
   <js-module src="www/hello.js" name="hello">
-    <clobbers target="hello" />
+    <clobbers target="gallery" />
   </js-module>
 
   <platform name="android">
 
     <config-file target="res/xml/config.xml" parent="/*">
-      <feature name="Hello">
+      <feature name="Gallery">
         <param name="android-package" value="com.example.plugin.Hello"/>
       </feature>
     </config-file>
 
-    <source-file src="src/android/Hello.java" target-dir="src/com/example/plugin/"/>
+	<source-file src="src/android/Hello.java" target-dir="src/com/example/plugin/" />
+	<!--
+	<source-file src="main/java/com/daimajia/slider/demo/ChildAnimationExample.java" target-dir="src/com/daimajia/slider/demo/" />
+	<source-file src="main/java/com/daimajia/slider/demo/MainActivity.java" target-dir="src/com/daimajia/slider/demo/" />
+	<source-file src="main/java/com/daimajia/slider/demo/TransformerAdapter.java" target-dir="src/com/daimajia/slider/demo/" />
+
+	<source-file src="library/src/main/java/com/daimajia/slider/library/Animations/BaseAnimationInterface.java" target-dir="src/com/daimajia/library/Animations/" />
+	<source-file src="library/src/main/java/com/daimajia/slider/library/Animations/DescriptionAnimation.java" target-dir="src/com/daimajia/library/Animations/" />
+	<source-file src="library/src/main/java/com/daimajia/slider/library/Indicators/PagerIndicator.java" target-dir="src/com/daimajia/library/Indicators/" />
+	<source-file src="library/src/main/java/com/daimajia/slider/library/SliderTypes/BaseSliderView.java" target-dir="src/com/daimajia/library/BaseSliderView/" />
+	<source-file src="library/src/main/java/com/daimajia/slider/library/SliderTypes/DefaultSliderView.java" target-dir="src/com/daimajia/library/BaseSliderView/" />
+	<source-file src="library/src/main/java/com/daimajia/slider/library/SliderTypes/TextSliderView.java" target-dir="src/com/daimajia/library/BaseSliderView/" />
+
+	<source-file src="library/src/main/java/com/daimajia/slider/library/Transformers/AccordionTransformer.java" target-dir="src/com/daimajia/library/Transformers/" />
+	<source-file src="library/src/main/java/com/daimajia/slider/library/Transformers/DepthPageTransformer.java" target-dir="src/com/daimajia/library/Transformers/" />
+	<source-file src="library/src/main/java/com/daimajia/slider/library/Transformers/BackgroundToForegroundTransformer.java" target-dir="src/com/daimajia/library/Transformers/" />
+	<source-file src="library/src/main/java/com/daimajia/slider/library/Transformers/BaseTransformer.java" target-dir="src/com/daimajia/library/Transformers/" />
+	<source-file src="library/src/main/java/com/daimajia/slider/library/Transformers/CubeInTransformer.java" target-dir="src/com/daimajia/library/Transformers/" />
+	<source-file src="library/src/main/java/com/daimajia/slider/library/Transformers/DefaultTransformer.java" target-dir="src/com/daimajia/library/Transformers/" />
+	<source-file src="library/src/main/java/com/daimajia/slider/library/Transformers/FadeTransformer.java" target-dir="src/com/daimajia/library/Transformers/" />
+	<source-file src="library/src/main/java/com/daimajia/slider/library/Transformers/FlipHorizontalTransformer.java" target-dir="src/com/daimajia/library/Transformers/" />
+	<source-file src="library/src/main/java/com/daimajia/slider/library/Transformers/FlipPageViewTransformer.java" target-dir="src/com/daimajia/library/Transformers/" />
+	<source-file src="library/src/main/java/com/daimajia/slider/library/Transformers/ForegroundToBackgroundTransformer.java" target-dir="src/com/daimajia/library/Transformers/" />
+	<source-file src="library/src/main/java/com/daimajia/slider/library/Transformers/RotateDownTransformer.java" target-dir="src/com/daimajia/library/Transformers/" />
+	<source-file src="library/src/main/java/com/daimajia/slider/library/Transformers/RotateUpTransformer.java" target-dir="src/com/daimajia/library/Transformers/" />
+	<source-file src="library/src/main/java/com/daimajia/slider/library/Transformers/StackTransformer.java" target-dir="src/com/daimajia/library/Transformers/" />
+	<source-file src="library/src/main/java/com/daimajia/slider/library/Transformers/TabletTransformer.java" target-dir="src/com/daimajia/library/Transformers/" />
+	<source-file src="library/src/main/java/com/daimajia/slider/library/Transformers/ZoomInTransformer.java" target-dir="src/com/daimajia/library/Transformers/" />
+	<source-file src="library/src/main/java/com/daimajia/slider/library/Transformers/ZoomOutSlideTransformer.java" target-dir="src/com/daimajia/library/Transformers/" />
+	<source-file src="library/src/main/java/com/daimajia/slider/library/Transformers/ZoomOutTransformer.java" target-dir="src/com/daimajia/library/Transformers/" />
+
+	<source-file src="library/src/main/java/com/daimajia/slider/library/Tricks/FixedSpeedScroller.java" target-dir="src/com/daimajia/library/Tricks/" />
+	<source-file src="library/src/main/java/com/daimajia/slider/library/Tricks/InfinitePagerAdapter.java" target-dir="src/com/daimajia/library/Tricks/" />
+	<source-file src="library/src/main/java/com/daimajia/slider/library/Tricks/InfiniteViewPager.java" target-dir="src/com/daimajia/library/Tricks/" />
+	<source-file src="library/src/main/java/com/daimajia/slider/library/Tricks/ViewPagerEx.java" target-dir="src/com/daimajia/library/Tricks/" />
+
+	<resource-file src="library/src/main/res/drawable/indicator_corner_bg.xml" target-dir="res/drawable/" />
+	<resource-file src="library/src/main/res/layout/indicator_layout.xml" target-dir="res/layout/" />
+	<resource-file src="library/src/main/res/layout/render_type_default.xml" target-dir="res/layout/" />
+	<resource-file src="library/src/main/res/layout/render_type_text.xml" target-dir="res/layout/" />
+	<resource-file src="library/src/main/res/layout/slider_layout.xml" target-dir="res/layout/" />
+	<resource-file src="library/src/main/res/values/attrs.xml" target-dir="res/values" />
+	<resource-file src="library/src/main/res/values/strings.xml" target-dir="res/values" />
+	<resource-file src="library/src/main/res/values/styles.xml" target-dir="res/values" />
+	-->
   </platform>
 
   <platform name="ios">
     
     <config-file target="config.xml" parent="/widget">
-      <feature name="Hello">
+      <feature name="Gallery">
         <param name="ios-package" value="HWPHello" />
       </feature>
     </config-file>
